@@ -1,0 +1,937 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fffaf5;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 7%;
+
+  background: white;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-links a {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #e85d04;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+  min-height: 650px;
+
+  padding: 80px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 60px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff1e6,
+      #ffe0c7
+    );
+
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.tagline {
+  font-size: 14px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 20px;
+
+  color: #e85d04;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 7vw, 90px);
+
+  line-height: 0.98;
+
+  margin-bottom: 28px;
+
+  letter-spacing: -3px;
+}
+
+.hero-description {
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  max-width: 520px;
+
+  color: #444;
+}
+
+.hero-buttons {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 15px 28px;
+
+  border-radius: 8px;
+
+  font-weight: 700;
+
+  transition: 0.3s;
+}
+
+.primary-btn {
+  background: #222;
+  color: white;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+
+  background: #e85d04;
+}
+
+.secondary-btn {
+  border: 2px solid #222;
+
+  color: #222;
+}
+
+.secondary-btn:hover {
+  background: #222;
+  color: white;
+}
+
+
+/* ================= HERO VISUAL ================= */
+
+.hero-visual {
+  position: relative;
+
+  width: 430px;
+  height: 430px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.food-circle {
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 170px;
+
+  background: #fff;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.15);
+
+  animation: floatFood 4s ease-in-out infinite;
+}
+
+@keyframes floatFood {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+.floating-card {
+  position: absolute;
+
+  background: white;
+
+  padding: 15px 20px;
+
+  border-radius: 12px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12);
+
+  animation: floatCard 3s ease-in-out infinite;
+}
+
+.card-one {
+  top: 40px;
+  right: 0;
+}
+
+.card-two {
+  bottom: 45px;
+  left: 0;
+
+  animation-delay: 1s;
+}
+
+@keyframes floatCard {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ================= MENU ================= */
+
+.menu-section {
+  padding: 100px 7%;
+
+  text-align: center;
+}
+
+.section-label {
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  color: #e85d04;
+
+  margin-bottom: 15px;
+}
+
+.menu-section h2,
+.about-section h2,
+.contact-section h2 {
+  font-size: 45px;
+
+  margin-bottom: 45px;
+
+  letter-spacing: -1px;
+}
+
+.menu-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.food-card {
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  text-align: left;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.food-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.food-image {
+  height: 200px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 90px;
+
+  background: #fff1e6;
+
+  border-radius: 14px;
+
+  margin-bottom: 20px;
+}
+
+.food-card h3 {
+  font-size: 23px;
+
+  margin-bottom: 10px;
+}
+
+.food-card p {
+  color: #666;
+
+  line-height: 1.6;
+
+  margin-bottom: 15px;
+}
+
+.food-card strong {
+  font-size: 21px;
+}
+/* ================= MENU IMPROVEMENTS ================= */
+
+.menu-subtitle {
+  color: #666;
+  font-size: 17px;
+  margin-top: -25px;
+  margin-bottom: 45px;
+}
+
+.food-info {
+  padding: 0 3px 5px;
+}
+
+.food-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.food-title-row h3 {
+  margin-bottom: 0;
+}
+
+.food-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: #e85d04;
+  white-space: nowrap;
+}
+
+.order-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #222;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.order-btn:hover {
+  background: #e85d04;
+  transform: translateY(-2px);
+}
+
+/* ================= ABOUT ================= */
+
+.about-section {
+  padding: 110px 7%;
+
+  background: #222;
+
+  color: white;
+}
+
+.about-content {
+  max-width: 700px;
+}
+
+.about-section h2 {
+  margin-bottom: 25px;
+}
+
+.about-section p {
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  color: #ddd;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-section {
+  padding: 110px 7%;
+
+  text-align: center;
+}
+
+.contact-section h2 {
+  margin-bottom: 15px;
+}
+
+.contact-section p {
+  font-size: 18px;
+
+  margin-bottom: 25px;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+
+  padding: 15px 28px;
+
+  border-radius: 8px;
+
+  background: #25d366;
+
+  color: white;
+
+  font-weight: 700;
+
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(37, 211, 102, 0.3);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+  padding: 30px;
+
+  text-align: center;
+
+  background: #111;
+
+  color: #aaa;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding-top: 70px;
+  }
+
+  .hero-description {
+    margin: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    width: 350px;
+    height: 350px;
+  }
+
+  .food-circle {
+    width: 280px;
+    height: 280px;
+
+    font-size: 130px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .hero-visual {
+    transform: scale(0.85);
+  }
+
+}
+/* ================= FOOD IMAGES ================= */
+
+.food-image {
+  height: 220px;
+  overflow: hidden;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  background: #fff1e6;
+}
+
+.food-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.food-card:hover .food-image img {
+  transform: scale(1.06);
+}
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .contact-grid {
+  grid-template-columns: 1fr;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+  .reviews-grid {
+  grid-template-columns: 1fr;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  /* Hero */
+
+  .hero {
+    min-height: auto;
+    padding: 70px 5%;
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .hero-content {
+    max-width: 700px;
+  }
+
+  .hero-description {
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    width: 350px;
+    height: 350px;
+  }
+
+  .food-circle {
+    width: 280px;
+    height: 280px;
+    font-size: 130px;
+  }
+
+  /* Menu */
+
+  .menu-section {
+    padding: 80px 5%;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+
+}
+
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 600px) {
+  .floating-whatsapp {
+  width: 52px;
+  height: 52px;
+
+  right: 18px;
+  bottom: 18px;
+
+  font-size: 24px;
+}
+  .reviews-section {
+  padding: 80px 5%;
+}
+
+.reviews-section h2 {
+  font-size: 36px;
+}
+
+  .navbar {
+    height: auto;
+    min-height: 70px;
+    padding: 18px 5%;
+
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  /* Hero */
+
+  .hero {
+    padding: 60px 5%;
+  }
+
+  .tagline {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 13vw, 58px);
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    text-align: center;
+  }
+
+  /* Hero visual */
+
+  .hero-visual {
+    width: 300px;
+    height: 300px;
+  }
+
+  .food-circle {
+    width: 230px;
+    height: 230px;
+    font-size: 105px;
+  }
+
+  .floating-card {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+
+  .card-one {
+    top: 10px;
+    right: -5px;
+  }
+
+  .card-two {
+    bottom: 10px;
+    left: -5px;
+  }
+
+  /* Menu */
+
+  .menu-section h2,
+  .about-section h2,
+  .contact-section h2 {
+    font-size: 36px;
+  }
+
+  .menu-subtitle {
+    font-size: 15px;
+  }
+
+  .food-card {
+    padding: 15px;
+  }
+
+  .food-image {
+    height: 210px;
+  }
+
+  .food-title-row {
+    align-items: flex-start;
+  }
+
+  .food-title-row h3 {
+    font-size: 20px;
+  }
+
+  .food-price {
+    font-size: 18px;
+  }
+
+  /* About */
+
+  .about-section,
+  .contact-section {
+    padding: 80px 5%;
+  }
+
+}
+/* ================= REVIEWS ================= */
+
+.reviews-section {
+  padding: 100px 7%;
+  text-align: center;
+  background: #fff;
+}
+
+.reviews-section h2 {
+  font-size: 45px;
+  margin-bottom: 50px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.review-card {
+  padding: 30px;
+  background: #fffaf5;
+  border-radius: 16px;
+  text-align: left;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.stars {
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.review-card p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.review-card h3 {
+  margin-bottom: 5px;
+}
+
+.review-card span {
+  color: #777;
+  font-size: 14px;
+}
+/* ================= CONTACT ================= */
+
+.contact-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-intro {
+  max-width: 600px;
+  margin: -25px auto 45px;
+  color: #666;
+  line-height: 1.7;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.contact-card {
+  padding: 30px;
+  background: #fffaf5;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.contact-icon {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.contact-card h3 {
+  margin-bottom: 12px;
+}
+
+.contact-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.contact-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #e85d04;
+  font-weight: 700;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  padding: 15px 28px;
+  border-radius: 8px;
+  background: #25d366;
+  color: white;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+}
+/* ================= FLOATING WHATSAPP ================= */
+
+.floating-whatsapp {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #25d366;
+  color: white;
+
+  font-size: 28px;
+
+  text-decoration: none;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+  z-index: 9999;
+
+  transition: 0.3s;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+}
