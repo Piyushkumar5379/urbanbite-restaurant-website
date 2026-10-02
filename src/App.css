@@ -935,3 +935,72 @@ footer {
 .floating-whatsapp:hover {
   transform: scale(1.1);
 }
+/* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* Prevent horizontal scrolling */
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Customer Reviews */
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .review-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Section headings */
+  .reviews-section h2 {
+    font-size: 42px;
+    line-height: 1.1;
+  }
+
+  /* Navigation */
+  nav {
+    flex-wrap: wrap;
+  }
+}
+/* =========================
+   CONTACT MOBILE FIX
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .contact-card {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: auto;
+  }
+
+  .contact-card h3 {
+    font-size: 24px;
+  }
+
+  .contact-card p {
+    font-size: 20px;
+    line-height: 1.5;
+    word-break: normal;
+  }
+}
